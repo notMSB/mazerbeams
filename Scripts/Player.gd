@@ -21,7 +21,9 @@ var laserThru = false
 var stickyTimer = 0
 var laserStuck = false
 var wallLeniencyFrames = 0
-
+var menuing = false
+var endfade
+var gart = false
 
 const SPEED = 450
 const GRAVITY = 60
@@ -38,32 +40,39 @@ func _ready():
 
 func _physics_process(delta):
 	#states that disallow air drift are barred, and moving grounded while not idle or crouching is barred
-	if state == SL.S_ST:
-		stickyTimer -=1
-		if velocity.x != 0 or stickyTimer <= 0:
-			changeState(SL.S_ID)
-		else:
-			var col = move_and_collide(Vector2(horizDir,0)) #hacky way to figure out if you're on a wall
-			if !col:
+	if gart:
+		endfade.modulate.a += .005
+		if endfade.modulate.a >= 1:
+			get_tree().change_scene("res://scenes/congart.tscn")
+	if Input.is_action_just_pressed("togglemenu"):
+		$EscMenu.toggle()
+	if !menuing:
+		if state == SL.S_ST:
+			stickyTimer -=1
+			if velocity.x != 0 or stickyTimer <= 0:
 				changeState(SL.S_ID)
-				position.x+= -1*horizDir #unhacking after the slide ends
-	if(is_on_floor() and !canDash and state != SL.S_DA):
-		canDash = true
-		setSprite()
-	if state <= 2:
-		if Input.is_action_pressed("right") and !Input.is_action_pressed("left"): #Double direction does nothing
-			moveDir(1)
-		elif Input.is_action_pressed("left") and !Input.is_action_pressed("right"):
-			moveDir(-1)
-	if state != SL.S_KB:
-		if Input.is_action_just_pressed("jump"):
-			jump()
-		if Input.is_action_just_released("jump") and !(is_on_floor()):
-			if velocity.y < -200:
-				velocity.y = -200
-	
-	if Input.is_action_just_pressed("dash") and canDash:
-		changeState(SL.S_PD)
+			else:
+				var col = move_and_collide(Vector2(horizDir,0)) #hacky way to figure out if you're on a wall
+				if !col:
+					changeState(SL.S_ID)
+					position.x+= -1*horizDir #unhacking after the slide ends
+		if(is_on_floor() and !canDash and state != SL.S_DA):
+			canDash = true
+			setSprite()
+		if state <= 2:
+			if Input.is_action_pressed("right") and !Input.is_action_pressed("left"): #Double direction does nothing
+				moveDir(1)
+			elif Input.is_action_pressed("left") and !Input.is_action_pressed("right"):
+				moveDir(-1)
+		if state != SL.S_KB:
+			if Input.is_action_just_pressed("jump"):
+				jump()
+			if Input.is_action_just_released("jump") and !(is_on_floor()):
+				if velocity.y < -200:
+					velocity.y = -200
+		
+		if Input.is_action_just_pressed("dash") and canDash:
+			changeState(SL.S_PD)
 	
 	#Reset dash speed if dashing around a wall zeroes it out; canDash is checked to filter dedicated dashes from walljumps
 	if state == SL.S_DA and velocity.x == 0 and !is_on_wall() and !canDash:
@@ -224,4 +233,6 @@ func _on_BGDeciders_body_entered(_body):
 	background.changeBG(position.y)
 
 func _win(_body):
-	pass # Replace with function body.
+	endfade = get_node("../endfade")
+	endfade.visible = true
+	gart = true

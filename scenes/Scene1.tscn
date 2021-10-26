@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilesets/SolidTiles.tres" type="TileSet" id=2]
@@ -23,6 +23,11 @@
 [ext_resource path="res://assets/sprites/lol.png" type="Texture" id=21]
 [ext_resource path="res://assets/sprites/lmao.png" type="Texture" id=22]
 [ext_resource path="res://Scripts/lmao.gd" type="Script" id=23]
+[ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://Scripts/EscMenu.gd" type="Script" id=25]
+[ext_resource path="res://assets/sprites/playerND.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/player.png" type="Texture" id=27]
+[ext_resource path="res://Scripts/ControlsMenu.gd" type="Script" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 280, 4 )
@@ -33,88 +38,99 @@ extents = Vector2( 10, 160 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 224, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 8, 8 )
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 24 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 16, 4 )
+[sub_resource type="DynamicFont" id=33]
+size = 36
+font_data = ExtResource( 24 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 24 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 16, 4 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 16.0002, 4.00012 )
+extents = Vector2( 16, 4 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 16.0002, 4.00012 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 16, 4.00012 )
+extents = Vector2( 16.0002, 4.00012 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 16, 4.00012 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 16, 3.99988 )
+extents = Vector2( 16, 4.00012 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 16, 4.00012 )
+extents = Vector2( 16, 3.99988 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 16, 4.00012 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 16, 3.99988 )
+extents = Vector2( 16, 4.00012 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 4.00012, 16.0001 )
+extents = Vector2( 16, 3.99988 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 15.9999, 4 )
+extents = Vector2( 4.00012, 16.0001 )
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 15.9999, 4 )
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 16, 4.00012 )
+extents = Vector2( 15.9999, 4 )
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 32, 4 )
+extents = Vector2( 16, 4.00012 )
 
 [sub_resource type="RectangleShape2D" id=20]
-extents = Vector2( 4.00006, 48 )
+extents = Vector2( 32, 4 )
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 16.0001, 4 )
+extents = Vector2( 4.00006, 48 )
 
 [sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 16, 4 )
+extents = Vector2( 16.0001, 4 )
 
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 16, 4 )
 
 [sub_resource type="RectangleShape2D" id=24]
-extents = Vector2( 4, 16 )
+extents = Vector2( 16, 4 )
 
 [sub_resource type="RectangleShape2D" id=25]
-extents = Vector2( 4, 32 )
+extents = Vector2( 4, 16 )
 
 [sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 4, 64 )
+extents = Vector2( 4, 32 )
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 64, 4 )
+extents = Vector2( 4, 64 )
 
 [sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 47.9999, 10 )
+extents = Vector2( 64, 4 )
 
 [sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 8, 20 )
+extents = Vector2( 47.9999, 10 )
 
 [sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 32, 10 )
+extents = Vector2( 8, 20 )
 
 [sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 32, 10 )
+
+[sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 98.7615, 148.142 )
 
 [node name="Stage" type="Node2D"]
@@ -185,6 +201,195 @@ drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 editor_draw_limits = true
 
+[node name="EscMenu" type="CanvasLayer" parent="Player"]
+script = ExtResource( 25 )
+
+[node name="Items" type="Control" parent="Player/EscMenu"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Player/EscMenu/Items"]
+margin_right = 524.0
+margin_bottom = 296.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player/EscMenu/Items"]
+margin_left = 208.0
+margin_top = 32.0
+margin_right = 309.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 4 )
+text = "not paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controls" type="Button" parent="Player/EscMenu/Items"]
+margin_left = 332.0
+margin_top = 162.0
+margin_right = 396.0
+margin_bottom = 182.0
+text = "controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resume" type="Button" parent="Player/EscMenu/Items"]
+margin_left = 108.0
+margin_top = 162.0
+margin_right = 169.0
+margin_bottom = 182.0
+text = "resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart" type="Button" parent="Player/EscMenu/Items"]
+margin_left = 208.0
+margin_top = 196.0
+margin_right = 301.0
+margin_bottom = 216.0
+text = "restart game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlsMenu" type="ColorRect" parent="Player/EscMenu"]
+visible = false
+margin_left = -4.0
+margin_right = 544.0
+margin_bottom = 288.0
+color = Color( 0.0941176, 0.0823529, 0.0823529, 1 )
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player/EscMenu/ControlsMenu"]
+margin_left = 16.0
+margin_right = 552.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 33 )
+text = "hello welcome to the controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Player/EscMenu/ControlsMenu"]
+margin_left = 64.0
+margin_top = 52.0
+margin_right = 176.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 33 )
+text = "JUMP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Player/EscMenu/ControlsMenu"]
+margin_left = 124.0
+margin_top = 224.0
+margin_right = 444.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 33 )
+text = "CASUALLY WALK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Player/EscMenu/ControlsMenu"]
+margin_left = 352.0
+margin_top = 52.0
+margin_right = 464.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 33 )
+text = "DASH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player" type="Sprite" parent="Player/EscMenu/ControlsMenu"]
+position = Vector2( 84, 176 )
+texture = ExtResource( 27 )
+
+[node name="upright" type="Sprite" parent="Player/EscMenu/ControlsMenu"]
+position = Vector2( 116, 144 )
+texture = ExtResource( 12 )
+
+[node name="player2" type="Sprite" parent="Player/EscMenu/ControlsMenu"]
+position = Vector2( 144, 112 )
+texture = ExtResource( 27 )
+
+[node name="player3" type="Sprite" parent="Player/EscMenu/ControlsMenu"]
+position = Vector2( 336, 144 )
+texture = ExtResource( 27 )
+
+[node name="upright2" type="Sprite" parent="Player/EscMenu/ControlsMenu"]
+position = Vector2( 400, 144 )
+texture = ExtResource( 12 )
+
+[node name="playerND" type="Sprite" parent="Player/EscMenu/ControlsMenu"]
+position = Vector2( 464, 112 )
+texture = ExtResource( 26 )
+
+[node name="Label4" type="Label" parent="Player/EscMenu/ControlsMenu"]
+margin_left = 24.0
+margin_top = 193.0
+margin_right = 185.0
+margin_bottom = 224.0
+text = "Keyboard: Z, Space, Enter
+XB1: A, Y"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Player/EscMenu/ControlsMenu"]
+margin_left = 168.0
+margin_top = 268.0
+margin_right = 364.0
+margin_bottom = 299.0
+text = "wasd, arrow keys, analog, dpad"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Player/EscMenu/ControlsMenu"]
+margin_left = 312.0
+margin_top = 192.0
+margin_right = 473.0
+margin_bottom = 223.0
+text = "Keyboard: LShift, RShift
+XB1: B, X, RT"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="player4" type="Sprite" parent="Player/EscMenu/ControlsMenu"]
+position = Vector2( 80, 268 )
+texture = ExtResource( 27 )
+
+[node name="player5" type="Sprite" parent="Player/EscMenu/ControlsMenu"]
+position = Vector2( 464, 268 )
+texture = ExtResource( 27 )
+
+[node name="Button" type="Button" parent="Player/EscMenu/ControlsMenu"]
+margin_left = 204.0
+margin_top = 124.0
+margin_right = 299.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 5 )
+text = "cool thanks"
+
 [node name="Terrain" type="Node2D" parent="."]
 
 [node name="SolidTiles" type="TileMap" parent="Terrain"]
@@ -212,12 +417,26 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R1"]
 position = Vector2( 2704, -1744 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R1/CollisionShape2D"]
 texture = ExtResource( 11 )
 
 [node name="Timer" type="Timer" parent="Terrain/DashRestores/R1"]
+
+[node name="R14" type="Area2D" parent="Terrain/DashRestores"]
+position = Vector2( 128, 96 )
+collision_layer = 32
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R14"]
+position = Vector2( 2704, -1744 )
+shape = SubResource( 34 )
+
+[node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R14/CollisionShape2D"]
+texture = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="Terrain/DashRestores/R14"]
 
 [node name="R2" type="Area2D" parent="Terrain/DashRestores"]
 collision_layer = 32
@@ -225,7 +444,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R2"]
 position = Vector2( 2416, -1648 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R2/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -239,7 +458,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R3"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R3/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -253,7 +472,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R4"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R4/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -267,7 +486,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R5"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R5/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -281,7 +500,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R6"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R6/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -295,7 +514,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R7"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R7/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -309,7 +528,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R8"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R8/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -323,7 +542,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R9"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R9/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -337,7 +556,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R10"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R10/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -351,7 +570,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R11"]
 position = Vector2( 2150, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R11/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -365,7 +584,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R12"]
 position = Vector2( 2118, -1648 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R12/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -379,7 +598,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R13"]
 position = Vector2( 2118, -1680 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R13/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -393,7 +612,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R15"]
 position = Vector2( 2118, -1648 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R15/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -407,7 +626,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R16"]
 position = Vector2( 1862, -1616 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R16/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -421,7 +640,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R17"]
 position = Vector2( 2118, -1744 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R17/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -435,7 +654,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R18"]
 position = Vector2( 2118, -1616 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R18/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -449,7 +668,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R19"]
 position = Vector2( 2118, -1744 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R19/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -463,7 +682,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R20"]
 position = Vector2( 2118, -1744 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R20/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -477,7 +696,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R21"]
 position = Vector2( 2118, -1744 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R21/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -491,7 +710,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R22"]
 position = Vector2( 2522, -1620 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R22/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -505,7 +724,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R23"]
 position = Vector2( 2522, -1652 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R23/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -519,7 +738,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R24"]
 position = Vector2( 2490, -1620 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R24/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -533,7 +752,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R25"]
 position = Vector2( 2490, -1620 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R25/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -547,7 +766,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R26"]
 position = Vector2( 2490, -1620 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R26/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -561,7 +780,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R27"]
 position = Vector2( 2490, -1620 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R27/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -575,7 +794,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R28"]
 position = Vector2( 2146, -1396 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R28/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -589,7 +808,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R29"]
 position = Vector2( 2146, -1520 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R29/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -603,7 +822,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R30"]
 position = Vector2( 2146, -1520 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R30/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -617,7 +836,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R31"]
 position = Vector2( 2146, -1488 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R31/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -631,7 +850,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R32"]
 position = Vector2( 2114, -1512 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R32/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -645,7 +864,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R33"]
 position = Vector2( 1862, -1096 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R33/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -659,7 +878,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R34"]
 position = Vector2( 1798, -1032 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R34/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -673,7 +892,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R35"]
 position = Vector2( 1862, -1032 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R35/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -687,7 +906,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R36"]
 position = Vector2( 1894, -1032 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R36/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -701,7 +920,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R37"]
 position = Vector2( 1894, -1032 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R37/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -715,7 +934,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R38"]
 position = Vector2( 1894, -1032 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R38/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -729,7 +948,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R39"]
 position = Vector2( 1766, -904 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R39/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -743,7 +962,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/DashRestores/R40"]
 position = Vector2( 1862, -1032 )
-shape = SubResource( 4 )
+shape = SubResource( 34 )
 
 [node name="Sprite" type="Sprite" parent="Terrain/DashRestores/R40/CollisionShape2D"]
 texture = ExtResource( 11 )
@@ -757,7 +976,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P18"]
 position = Vector2( 592, -2176 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="T18" type="Sprite" parent="Terrain/PressureAreas/P18"]
 visible = false
@@ -770,7 +989,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P17"]
 position = Vector2( 1232, -2208 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="T17" type="Sprite" parent="Terrain/PressureAreas/P17"]
 visible = false
@@ -783,7 +1002,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P16"]
 position = Vector2( 2704, -1376 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="T16" type="Sprite" parent="Terrain/PressureAreas/P16"]
 visible = false
@@ -796,7 +1015,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P15"]
 position = Vector2( 2640, -1376 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="T15" type="Sprite" parent="Terrain/PressureAreas/P15"]
 visible = false
@@ -809,7 +1028,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P14"]
 position = Vector2( 2576, -1376 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="T14" type="Sprite" parent="Terrain/PressureAreas/P14"]
 visible = false
@@ -822,7 +1041,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P13"]
 position = Vector2( 2512, -1376 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="T13" type="Sprite" parent="Terrain/PressureAreas/P13"]
 visible = false
@@ -835,7 +1054,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P12"]
 position = Vector2( 2448, -1376 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="T12" type="Sprite" parent="Terrain/PressureAreas/P12"]
 visible = false
@@ -848,7 +1067,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P11"]
 position = Vector2( 2384, -1376 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="T11" type="Sprite" parent="Terrain/PressureAreas/P11"]
 visible = false
@@ -861,7 +1080,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P10"]
 position = Vector2( 2320, -1376 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="T10" type="Sprite" parent="Terrain/PressureAreas/P10"]
 visible = false
@@ -874,11 +1093,11 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P9"]
 position = Vector2( 2064, -1408 )
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/PressureAreas/P9"]
 position = Vector2( 2192, -1376 )
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [node name="T9n1" type="Sprite" parent="Terrain/PressureAreas/P9"]
 visible = false
@@ -945,54 +1164,54 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P8"]
 position = Vector2( 1824, -1360 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/PressureAreas/P8"]
 position = Vector2( 1920, -1360 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/PressureAreas/P8"]
 position = Vector2( 1824, -1296 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/PressureAreas/P8"]
 position = Vector2( 1920, -1264 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Terrain/PressureAreas/P8"]
 position = Vector2( 1824, -1200 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Terrain/PressureAreas/P8"]
 position = Vector2( 1920, -1168 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Terrain/PressureAreas/P8"]
 position = Vector2( 1824, -1104 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Terrain/PressureAreas/P8"]
 position = Vector2( 1920, -1072 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="P7" type="Area2D" parent="Terrain/PressureAreas"]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P7"]
 position = Vector2( 1648, -992 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/PressureAreas/P7"]
 position = Vector2( 1712, -992 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/PressureAreas/P7"]
 position = Vector2( 1776, -992 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/PressureAreas/P7"]
 position = Vector2( 1840, -992 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="T7n1" type="Sprite" parent="Terrain/PressureAreas/P7"]
 visible = false
@@ -1023,7 +1242,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P6"]
 position = Vector2( 1232, -1408 )
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 
 [node name="T6" type="Sprite" parent="Terrain/PressureAreas/P6"]
 visible = false
@@ -1036,11 +1255,11 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P5"]
 position = Vector2( 1040, -1440 )
-shape = SubResource( 18 )
+shape = SubResource( 19 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/PressureAreas/P5"]
 position = Vector2( 1168, -1440 )
-shape = SubResource( 18 )
+shape = SubResource( 19 )
 
 [node name="T5n1" type="Sprite" parent="Terrain/PressureAreas/P5"]
 visible = false
@@ -1059,7 +1278,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P4"]
 position = Vector2( 960, -1216 )
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="T4n1" type="Sprite" parent="Terrain/PressureAreas/P4"]
 visible = false
@@ -1078,7 +1297,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P3"]
 position = Vector2( 800, -1168 )
-shape = SubResource( 20 )
+shape = SubResource( 21 )
 
 [node name="T3n1" type="Sprite" parent="Terrain/PressureAreas/P3"]
 visible = false
@@ -1100,14 +1319,14 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/PressureAreas/P3"]
 position = Vector2( 816, -1216 )
-shape = SubResource( 21 )
+shape = SubResource( 22 )
 
 [node name="P2" type="Area2D" parent="Terrain/PressureAreas"]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P2"]
 position = Vector2( 592, -1056 )
-shape = SubResource( 22 )
+shape = SubResource( 23 )
 
 [node name="T2" type="Sprite" parent="Terrain/PressureAreas/P2"]
 visible = false
@@ -1120,7 +1339,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PressureAreas/P1"]
 position = Vector2( 336, -1056 )
-shape = SubResource( 23 )
+shape = SubResource( 24 )
 
 [node name="T1" type="Sprite" parent="Terrain/PressureAreas/P1"]
 visible = false
@@ -1668,215 +1887,215 @@ collision_layer = 2
 
 [node name="1Tall2" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2524, 336 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall3" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2692, 336 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall4" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 924, -560 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall7" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 132, -848 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall5" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1028, -560 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall8" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 676, -1104 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall10" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1924, -1296 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall12" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2780, -1424 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall11" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1924, -1040 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall9" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 572, -1104 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="1Tall6" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1244, -560 )
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="2Tall12" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 612, 320 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall3" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1412, 128 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall4" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1884, 256 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall5" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1988, 320 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall6" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2756, 32 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall7" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1980, -544 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall8" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 132, -576 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall9" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 28, -576 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall13" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 28, -672 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall10" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 132, -672 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall11" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 132, -768 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall16" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 700, -1152 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall17" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 924, -1376 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall18" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1820, -1248 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall23" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1820, -1408 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall24" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2780, -1472 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall25" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2780, -1568 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall26" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2564, -1568 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall19" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1820, -1152 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall20" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1820, -1056 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall21" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1924, -1120 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall22" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1924, -1216 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall14" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 132, -1056 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="2Tall15" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 28, -1088 )
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="4tall" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 28, -832 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall2" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 28, -992 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall5" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2948, -288 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall6" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2308, 96 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall8" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1988, 128 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall9" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1988, -64 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall10" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1884, -128 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall11" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1884, 64 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall12" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1724, 192 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall13" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1308, 256 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall14" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1308, 96 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall15" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1412, 320 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall7" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 2140, 192 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall3" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 132, -928 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall16" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1636, -1952 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall17" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1436, -2080 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall19" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 28, -2144 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="4tall18" type="CollisionShape2D" parent="Terrain/J"]
 position = Vector2( 1436, -1920 )
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="C" type="StaticBody2D" parent="Terrain"]
 collision_layer = 16
@@ -1884,247 +2103,247 @@ collision_mask = 0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 80, 484 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 544, 260 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 864, 196 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 992, 196 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1568, 68 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1944, 388 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2272, -60 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2144, -444 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2464, -380 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2080, -572 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2016, -700 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1696, -668 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1568, -668 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D24" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1440, -668 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D25" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1312, -668 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1184, -668 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D27" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1056, -668 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D28" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 928, -636 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D29" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 512, -540 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D31" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1344, -540 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 448, -540 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D32" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 416, -1052 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D34" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 512, -1052 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D35" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 768, -1052 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D36" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 864, -1244 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1568, -1436 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D38" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2176, -1340 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D44" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2272, -1628 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D45" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1376, -2236 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D46" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 992, -1820 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D50" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 768, -1852 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D51" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 64, -2236 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D47" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1088, -1820 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D48" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1216, -1820 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D49" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1280, -1820 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D39" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2304, -1340 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D40" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2432, -1340 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D41" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2560, -1340 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D42" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2688, -1340 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D43" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2784, -1340 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D33" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 0, -476 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2368, -60 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2688, -60 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 2944, -60 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 704, 260 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1368, 196 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1312, 420 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 1504, 452 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Terrain/C"]
 position = Vector2( 544, 420 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 one_way_collision = true
 
 [node name="Arrows" type="Node2D" parent="."]
@@ -2186,7 +2405,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arrows/Area2D"]
 position = Vector2( 1680, -408 )
-shape = SubResource( 28 )
+shape = SubResource( 29 )
 
 [node name="jail" type="Sprite" parent="Arrows/Area2D"]
 visible = false
@@ -2217,7 +2436,7 @@ script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arrows/Area2D2"]
 position = Vector2( 8, -7.99988 )
-shape = SubResource( 29 )
+shape = SubResource( 30 )
 
 [node name="doit" type="Sprite" parent="Arrows/Area2D2"]
 visible = false
@@ -2235,7 +2454,7 @@ script = ExtResource( 23 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arrows/Area2D3"]
 position = Vector2( -140, -1632 )
-shape = SubResource( 30 )
+shape = SubResource( 31 )
 
 [node name="lol" type="Sprite" parent="Arrows/Area2D3"]
 visible = false
@@ -2251,21 +2470,36 @@ texture = ExtResource( 22 )
 position = Vector2( 1456, -2192 )
 texture = ExtResource( 13 )
 
+[node name="endfade" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 0 )
+position = Vector2( 192, -2248 )
+scale = Vector2( 1.71875, 1.51389 )
+z_index = 6
+texture = ExtResource( 6 )
+
 [node name="tropy" type="Sprite" parent="."]
 position = Vector2( 80, -2316 )
 scale = Vector2( 0.324013, 0.324013 )
+z_index = 6
 texture = ExtResource( 17 )
 
 [node name="Area2D" type="Area2D" parent="tropy"]
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tropy/Area2D"]
-scale = Vector2( 1, 1 )
-shape = SubResource( 31 )
+shape = SubResource( 32 )
 [connection signal="body_entered" from="BGDeciders" to="Player" method="_on_BGDeciders_body_entered"]
+[connection signal="pressed" from="Player/EscMenu/Items/controls" to="Player/EscMenu" method="_show_controls"]
+[connection signal="pressed" from="Player/EscMenu/Items/resume" to="Player/EscMenu" method="toggle"]
+[connection signal="pressed" from="Player/EscMenu/Items/restart" to="Player/EscMenu" method="_restart"]
+[connection signal="coolThanks" from="Player/EscMenu/ControlsMenu" to="Player/EscMenu" method="_on_ControlsMenu_coolThanks"]
+[connection signal="pressed" from="Player/EscMenu/ControlsMenu/Button" to="Player/EscMenu/ControlsMenu" method="_on_Button_pressed"]
 [connection signal="body_entered" from="Terrain/DashRestores/R1" to="Terrain/DashRestores/R1" method="_on_restore"]
 [connection signal="body_exited" from="Terrain/DashRestores/R1" to="Terrain/DashRestores/R1" method="_on_restore"]
 [connection signal="timeout" from="Terrain/DashRestores/R1/Timer" to="Terrain/DashRestores/R1" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Terrain/DashRestores/R14" to="Terrain/DashRestores/R14" method="_on_restore"]
+[connection signal="body_exited" from="Terrain/DashRestores/R14" to="Terrain/DashRestores/R14" method="_on_restore"]
+[connection signal="timeout" from="Terrain/DashRestores/R14/Timer" to="Terrain/DashRestores/R14" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Terrain/DashRestores/R2" to="Terrain/DashRestores/R2" method="_on_restore"]
 [connection signal="body_exited" from="Terrain/DashRestores/R2" to="Terrain/DashRestores/R2" method="_on_restore"]
 [connection signal="timeout" from="Terrain/DashRestores/R2/Timer" to="Terrain/DashRestores/R2" method="_on_Timer_timeout"]
@@ -2381,10 +2615,10 @@ shape = SubResource( 31 )
 [connection signal="body_exited" from="Terrain/DashRestores/R40" to="Terrain/DashRestores/R40" method="_on_restore"]
 [connection signal="timeout" from="Terrain/DashRestores/R40/Timer" to="Terrain/DashRestores/R40" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/PressureAreas/P18/T18" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner95" method="_on_P_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner98" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner97" method="_on_P_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner95" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner96" method="_on_P_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner98" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P18" to="Terrain/PressureAreas/P18/T18" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P17" to="Terrain/PressureAreas/P17/T17" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P17" to="Terrain/Spawners/Spawner87" method="_on_P_body_entered"]
@@ -2410,69 +2644,69 @@ shape = SubResource( 31 )
 [connection signal="body_entered" from="Terrain/PressureAreas/P10" to="Terrain/PressureAreas/P10/T10" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P10" to="Terrain/Spawners/Spawner68" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P10" to="Terrain/PressureAreas/P10/T10" method="_on_pressure_body_exited"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P9" to="Terrain/PressureAreas/P9/T9n2" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P9" to="Terrain/PressureAreas/P9/T9n1" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P9" to="Terrain/PressureAreas/P9/T9n2" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P9" to="Terrain/Spawners/Spawner67" method="_on_P_body_entered"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P9" to="Terrain/PressureAreas/P9/T9n2" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P9" to="Terrain/PressureAreas/P9/T9n1" method="_on_pressure_body_exited"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n3" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n4" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n1" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n5" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n6" method="_on_pressure_body_entered"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P9" to="Terrain/PressureAreas/P9/T9n2" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n7" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n2" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n3" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n4" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n5" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n6" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n8" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner62" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner63" method="_on_P_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner62" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner64" method="_on_P_body_entered"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n3" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n4" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n1" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n5" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n6" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n7" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n2" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n3" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n4" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n5" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n6" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n8" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n3" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n4" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n2" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n4" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/Spawners/Spawner66" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n3" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n4" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n2" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n4" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n1" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P6" to="Terrain/PressureAreas/P6/T6" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P6" to="Terrain/Spawners/Spawner61" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P6" to="Terrain/PressureAreas/P6/T6" method="_on_pressure_body_exited"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P5" to="Terrain/PressureAreas/P5/T5n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P5" to="Terrain/PressureAreas/P5/T5n2" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P5" to="Terrain/PressureAreas/P5/T5n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P5" to="Terrain/Spawners/Spawner60" method="_on_P_body_entered"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P5" to="Terrain/PressureAreas/P5/T5n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P5" to="Terrain/PressureAreas/P5/T5n2" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P5" to="Terrain/PressureAreas/P5/T5n1" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n2" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P4" to="Terrain/Spawners/Spawner54" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n2" method="_on_pressure_body_exited"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n2" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n3" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n1" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n3" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n2" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/Spawners/Spawner51" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/Spawners/Spawner52" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/Spawners/Spawner50" method="_on_P_body_entered"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n2" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n3" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n1" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n3" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n2" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P2" to="Terrain/PressureAreas/P2/T2" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P2" to="Terrain/Spawners/Spawner49" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P2" to="Terrain/PressureAreas/P2/T2" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/PressureAreas/P1/T1" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner44" method="_on_P_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner47" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner45" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner46" method="_on_P_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner47" method="_on_P_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner44" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P1" to="Terrain/PressureAreas/P1/T1" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Arrows/Area2D" to="Arrows/Area2D/jail" method="activate"]
 [connection signal="body_exited" from="Arrows/Area2D2" to="Arrows/Area2D2" method="_on_funny_body_exited"]
