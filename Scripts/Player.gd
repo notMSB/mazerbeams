@@ -43,7 +43,9 @@ func _physics_process(delta):
 	if gart:
 		endfade.modulate.a += .005
 		if endfade.modulate.a >= 1:
-			get_tree().change_scene("res://scenes/congart.tscn")
+			var error_code = get_tree().change_scene("res://scenes/congart.tscn")
+			if error_code != OK:
+				print("ERROR: ", error_code)
 	if Input.is_action_just_pressed("togglemenu"):
 		$EscMenu.toggle()
 	if !menuing:

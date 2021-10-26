@@ -25,7 +25,9 @@ func _restart():
 		$Items/restart.text = "are you sure?"
 		restartConfirm = true
 	else:
-		get_tree().reload_current_scene()
+		var error_code = get_tree().reload_current_scene()
+		if error_code != OK:
+			print("ERROR: ", error_code)
 
 
 
