@@ -37,6 +37,11 @@ const stickyTotal = 15
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	background = get_node("../BG")
+	var save_game = File.new()
+	if save_game.file_exists("user://savegame.save"):
+		load_game()
+#	else:
+#		print("no save")
 
 func _physics_process(delta):
 	#states that disallow air drift are barred, and moving grounded while not idle or crouching is barred
@@ -238,3 +243,57 @@ func _win(_body):
 	endfade = get_node("../endfade")
 	endfade.visible = true
 	gart = true
+	
+func save():
+	var save_dict = {
+		"filename" : get_filename(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x, # Vector2 is not supported by JSON
+		"pos_y" : position.y,
+	}
+	return save_dict
+
+func save_game():
+	#print("saving game")
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	for node in save_nodes:
+		# Check the node is an instanced scene so it can be instanced again during load.
+		if node.filename.empty():
+			print("persistent node '%s' is not an instanced scene, skipped" % node.name)
+			continue
+
+		# Check the node has a save function.
+		if !node.has_method("save"):
+			print("persistent node '%s' is missing a save() function, skipped" % node.name)
+			continue
+
+		# Call the node's save function.
+		var node_data = node.call("save")
+
+		# Store the save dictionary as a new line in the save file.
+		save_game.store_line(to_json(node_data))
+	save_game.close()
+	var error_code = get_tree().change_scene("res://scenes/menu.tscn")
+	if error_code != OK:
+		print("ERROR: ", error_code)
+
+func load_game():
+	var save_game = File.new()
+	if not save_game.file_exists("user://savegame.save"):
+		return # Error! We don't have a save to load.
+
+	# Load the file line by line and process that dictionary to restore
+	# the object it represents.
+	save_game.open("user://savegame.save", File.READ)
+	while save_game.get_position() < save_game.get_len():
+		# Get the saved dictionary from the next line in the save file
+		var node_data = parse_json(save_game.get_line())
+
+		position = Vector2(node_data["pos_x"], node_data["pos_y"])
+		
+	save_game.close()
+	var dir = Directory.new()
+	dir.remove("user://savegame.save")
+	

@@ -35,3 +35,5 @@ func _on_ControlsMenu_coolThanks():
 	$Items/controls.grab_focus()
 	$Items/restart.text = "restart"
 	restartConfirm = false
+	
+	

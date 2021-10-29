@@ -133,7 +133,7 @@ extents = Vector2( 32, 10 )
 [sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 98.7615, 148.142 )
 
-[node name="Stage" type="Node2D"]
+[node name="Scene1" type="Node2D"]
 position = Vector2( -4, -4 )
 
 [node name="BGDeciders" type="Area2D" parent="."]
@@ -185,7 +185,9 @@ z_index = -4000
 z_as_relative = false
 texture = ExtResource( 6 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" parent="." groups=[
+"Persist",
+] instance=ExtResource( 1 )]
 position = Vector2( -144, 528 )
 z_index = 1
 collision_mask = 62
@@ -252,11 +254,21 @@ __meta__ = {
 }
 
 [node name="restart" type="Button" parent="Player/EscMenu/Items"]
-margin_left = 208.0
-margin_top = 196.0
-margin_right = 301.0
-margin_bottom = 216.0
+margin_left = 92.0
+margin_top = 204.0
+margin_right = 185.0
+margin_bottom = 224.0
 text = "restart game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="Button" parent="Player/EscMenu/Items"]
+margin_left = 318.0
+margin_top = 204.0
+margin_right = 415.0
+margin_bottom = 224.0
+text = "save and quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -2488,10 +2500,12 @@ texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tropy/Area2D"]
 shape = SubResource( 34 )
+
 [connection signal="body_entered" from="BGDeciders" to="Player" method="_on_BGDeciders_body_entered"]
 [connection signal="pressed" from="Player/EscMenu/Items/controls" to="Player/EscMenu" method="_show_controls"]
 [connection signal="pressed" from="Player/EscMenu/Items/resume" to="Player/EscMenu" method="toggle"]
 [connection signal="pressed" from="Player/EscMenu/Items/restart" to="Player/EscMenu" method="_restart"]
+[connection signal="pressed" from="Player/EscMenu/Items/quit" to="Player" method="save_game"]
 [connection signal="coolThanks" from="Player/EscMenu/ControlsMenu" to="Player/EscMenu" method="_on_ControlsMenu_coolThanks"]
 [connection signal="pressed" from="Player/EscMenu/ControlsMenu/Button" to="Player/EscMenu/ControlsMenu" method="_on_Button_pressed"]
 [connection signal="body_entered" from="Terrain/DashRestores/R1" to="Terrain/DashRestores/R1" method="_on_restore"]
@@ -2615,10 +2629,10 @@ shape = SubResource( 34 )
 [connection signal="body_exited" from="Terrain/DashRestores/R40" to="Terrain/DashRestores/R40" method="_on_restore"]
 [connection signal="timeout" from="Terrain/DashRestores/R40/Timer" to="Terrain/DashRestores/R40" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/PressureAreas/P18/T18" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner95" method="_on_P_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner98" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner96" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner97" method="_on_P_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner98" method="_on_P_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P18" to="Terrain/Spawners/Spawner95" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P18" to="Terrain/PressureAreas/P18/T18" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P17" to="Terrain/PressureAreas/P17/T17" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P17" to="Terrain/Spawners/Spawner87" method="_on_P_body_entered"]
@@ -2649,34 +2663,34 @@ shape = SubResource( 34 )
 [connection signal="body_entered" from="Terrain/PressureAreas/P9" to="Terrain/Spawners/Spawner67" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P9" to="Terrain/PressureAreas/P9/T9n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P9" to="Terrain/PressureAreas/P9/T9n2" method="_on_pressure_body_exited"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n3" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n5" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n6" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n4" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n7" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n2" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n3" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n4" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n6" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n5" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n8" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner64" method="_on_P_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner62" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner63" method="_on_P_body_entered"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n3" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n5" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n6" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n4" method="_on_pressure_body_exited"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner62" method="_on_P_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P8" to="Terrain/Spawners/Spawner64" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n7" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n2" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n3" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n4" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n6" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n5" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P8" to="Terrain/PressureAreas/P8/T8n8" method="_on_pressure_body_exited"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n4" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n2" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n3" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n1" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n4" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P7" to="Terrain/Spawners/Spawner66" method="_on_P_body_entered"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n4" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n2" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n3" method="_on_pressure_body_exited"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n1" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P7" to="Terrain/PressureAreas/P7/T7n4" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P6" to="Terrain/PressureAreas/P6/T6" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P6" to="Terrain/Spawners/Spawner61" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P6" to="Terrain/PressureAreas/P6/T6" method="_on_pressure_body_exited"]
@@ -2685,28 +2699,28 @@ shape = SubResource( 34 )
 [connection signal="body_entered" from="Terrain/PressureAreas/P5" to="Terrain/Spawners/Spawner60" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P5" to="Terrain/PressureAreas/P5/T5n2" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P5" to="Terrain/PressureAreas/P5/T5n1" method="_on_pressure_body_exited"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n2" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P4" to="Terrain/Spawners/Spawner54" method="_on_P_body_entered"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n2" method="_on_pressure_body_exited"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n1" method="_on_pressure_body_entered"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P4" to="Terrain/PressureAreas/P4/T4n1" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n3" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n2" method="_on_pressure_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n1" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/Spawners/Spawner51" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/Spawners/Spawner52" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P3" to="Terrain/Spawners/Spawner50" method="_on_P_body_entered"]
-[connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n1" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n3" method="_on_pressure_body_exited"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n2" method="_on_pressure_body_exited"]
+[connection signal="body_exited" from="Terrain/PressureAreas/P3" to="Terrain/PressureAreas/P3/T3n1" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P2" to="Terrain/PressureAreas/P2/T2" method="_on_pressure_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P2" to="Terrain/Spawners/Spawner49" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P2" to="Terrain/PressureAreas/P2/T2" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/PressureAreas/P1/T1" method="_on_pressure_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner45" method="_on_P_body_entered"]
-[connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner46" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner47" method="_on_P_body_entered"]
 [connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner44" method="_on_P_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner45" method="_on_P_body_entered"]
+[connection signal="body_entered" from="Terrain/PressureAreas/P1" to="Terrain/Spawners/Spawner46" method="_on_P_body_entered"]
 [connection signal="body_exited" from="Terrain/PressureAreas/P1" to="Terrain/PressureAreas/P1/T1" method="_on_pressure_body_exited"]
 [connection signal="body_entered" from="Arrows/Area2D" to="Arrows/Area2D/jail" method="activate"]
 [connection signal="body_exited" from="Arrows/Area2D2" to="Arrows/Area2D2" method="_on_funny_body_exited"]
