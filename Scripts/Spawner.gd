@@ -7,6 +7,7 @@ export var isHorizontal = false
 export var baseCountdown = 0
 export var maxDuration = -1
 export var laserSpeed = 5
+export var activeLevel = 0 #0 means always
 
 const fireModifier = .5
 const cooldownModifier = .5
@@ -15,6 +16,7 @@ var useArrow = false
 var currentDuration = -1
 var countdownMultiplier = .25
 var laserZ = -34 #lasers with speed 16 will have a Z of -1
+onready var player = get_node("/root/Scene1/Player")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,14 +36,15 @@ func _ready():
 		$Timer.start(fireModifier / abs(laserSpeed))
 
 func fire():
-	var proj = Laser.instance()
-	owner.add_child(proj)
-	proj.transform = transform
-	if(useArrow):
-		proj.init(laserSpeed, isHorizontal, useArrow, laserZ)
-	else:
-		proj.init(laserSpeed, isHorizontal, useArrow, laserZ - 2)
-	useArrow = !useArrow
+	if activeLevel == player.level or activeLevel == 0:
+		var proj = Laser.instance()
+		owner.add_child(proj)
+		proj.transform = transform
+		if(useArrow):
+			proj.init(player, laserSpeed, isHorizontal, useArrow, laserZ)
+		else:
+			proj.init(player, laserSpeed, isHorizontal, useArrow, laserZ - 2)
+		useArrow = !useArrow
 
 func _on_Timer_timeout():
 	if baseCountdown > 0:

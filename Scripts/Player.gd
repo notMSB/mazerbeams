@@ -24,6 +24,7 @@ var wallLeniencyFrames = 0
 var menuing = false
 var endfade
 var gart = false
+var level = 1
 
 const SPEED = 450
 const GRAVITY = 60
@@ -238,6 +239,14 @@ func hitByLaser(travelSpeed, isHoriz, laserPos):
 
 func _on_BGDeciders_body_entered(_body):
 	background.changeBG(position.y)
+	if position.y < -1600:
+		level = 4
+	elif position.y < -1080:
+		level = 3
+	elif position.y < -280:
+		level = 2
+	else:
+		level = 1
 
 func _win(_body):
 	endfade = get_node("../endfade")

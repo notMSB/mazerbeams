@@ -9,8 +9,8 @@ var isHorizontal = false
 var perishTimer = 0
 var perishing = false
 
-func init(inheritedSpeed, isHoriz, useArrow, laserZ):
-	player = get_node("../Player")
+func init(acquiredPlayer, inheritedSpeed, isHoriz, useArrow, laserZ):
+	player = acquiredPlayer
 	set_z_index(laserZ)
 	laserSpeed = inheritedSpeed
 	perishTimer = 32 - abs(laserSpeed)
